@@ -8,7 +8,7 @@
   <meta property="og:title" content="Tricks, Treats & Tees — Halloween Night" />
   <meta property="og:description" content="Trick-or-treat golf carts + costume tourney. Get your tickets!" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1600&auto=format&fit=crop" />
+  <meta property="og:image" content="./trick-or-treat.png" />
   <meta name="theme-color" content="#0b0b0f" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
@@ -47,9 +47,7 @@
     .panel{background:linear-gradient(180deg,#151622,#0f1018);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
     .grid{display:grid;gap:24px}
     @media (min-width:900px){.grid.two{grid-template-columns:1.2fr .8fr}}
-    .hero{
-      display:grid;gap:18px;place-items:center;padding:40px 22px 32px
-    }
+    .hero{display:grid;gap:18px;place-items:center;padding:40px 22px 32px}
     .hero h1{font-family:Rubik,Inter,sans-serif;font-weight:900;line-height:1;letter-spacing:.4px;margin:0;font-size:clamp(32px,6.6vw,68px)}
     .hero p{color:var(--ink-dim);margin:0;max-width:70ch}
     .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
@@ -57,22 +55,20 @@
     .btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414;}
     .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
     .badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;color:var(--ink-dim);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-
+    .poster{width:100%;max-width:800px;margin:8px auto 0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .poster img{display:block;width:100%;height:auto}
     .details{display:grid;gap:18px;padding:20px}
     .detail{display:flex;gap:12px;align-items:flex-start;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px}
     .detail strong{display:block;font-weight:800;color:var(--ink)}
     .detail span{color:var(--ink-dim)}
-
     .tickets{padding:22px}
     .tickets h2{margin:0 0 6px;font-family:Rubik;font-size:clamp(22px,3.6vw,34px)}
     .widget-box{background:#0f1017;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:18px}
     .note{color:var(--ink-dim);font-size:14px}
-
     .faq{padding:22px}
     details{background:#0e0f15;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
     details+details{margin-top:10px}
     details summary{cursor:pointer;font-weight:700}
-
     footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
     .small{font-size:12px}
   </style>
@@ -84,13 +80,18 @@
       <path d="M50,120 q20,-30 40,0 q20,-30 40,0 q20,-30 40,0" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="3" />
     </svg>
     <div class="hero wrap panel">
-      <span class="badge">Family‑friendly Halloween Event</span>
+      <span class="badge">Family-friendly Halloween Event</span>
       <h1 class="brand">Tricks, Treats & Tees</h1>
-      <p>Trick‑or‑treat at sponsored golf carts, plus a costume golf tournament. Music, food, prizes, and spooky vibes on the river.</p>
+      <p>Trick-or-treat at sponsored golf carts, plus a costume golf tournament. Music, food, prizes, and spooky vibes on the river.</p>
       <div class="cta">
         <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
         <a href="#details" class="btn btn-ghost">Event Details</a>
       </div>
+
+      <!-- Your poster image -->
+      <figure class="poster">
+        <img src="./trick-or-treat.png" alt="Tricks, Treats & Tees event poster">
+      </figure>
     </div>
   </header>
 
@@ -110,70 +111,49 @@
       </div>
       <div class="detail">
         <div>👻</div>
-        <div><strong>What to expect</strong><span>Golf‑cart trick‑or‑treating, costume contest, 9‑hole scramble (optional), music & food specials.</span></div>
+        <div><strong>What to expect</strong><span>Golf-cart trick-or-treating, costume contest, 9-hole scramble (optional), music & food specials.</span></div>
       </div>
     </section>
 
     <section id="tickets" class="panel tickets" aria-label="Ticket purchase">
       <h2>Tickets</h2>
-      <p class="note">Choose one of the widgets below. Replace placeholders with your IDs, then remove the others.</p>
 
+      <!-- Ticket Tailor ONLY -->
       <div class="widget-box" style="margin-top:12px">
-        <h3>Option A — Eventbrite (embedded checkout)</h3>
-        <div id="eventbrite-widget-container"></div>
-        <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-        <script>
-          // Replace with your real Eventbrite event ID, e.g. "123456789012"
-          // Then the button appears inline (modal can be configured too)
-          const EVENTBRITE_EVENT_ID = "YOUR_EVENT_ID";
-          if (EVENTBRITE_EVENT_ID !== "YOUR_EVENT_ID") {
-            window.EBWidgets.createWidget({
-              widgetType: "checkout",
-              eventId: EVENTBRITE_EVENT_ID,
-              iframeContainerId: "eventbrite-widget-container"
-            });
-          }
-        </script>
-        <p class="small note">Eventbrite handles payments, QR codes, and attendee emails.</p>
-      </div>
-
-      <div class="widget-box" style="margin-top:14px">
-        <h3>Option B — Ticket Tailor (inline or button)</h3>
+        <h3>Buy Tickets — Ticket Tailor</h3>
         <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
-        <a class="btn btn-primary" style="text-decoration:none" href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">Buy tickets</a>
-        <p class="small note">Swap the link above with your Ticket Tailor event URL. You can embed a full box office widget if preferred.</p>
-      </div>
+        <!-- Replace with your real Ticket Tailor URL -->
+        <a class="btn btn-primary" style="text-decoration:none"
+           href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">
+          Buy tickets
+        </a>
 
-      <div class="widget-box" style="margin-top:14px">
-        <h3>Option C — Stripe Buy Button (DIY tickets)</h3>
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-        <!-- Replace with your real IDs from Stripe -->
-        <stripe-buy-button
-          buy-button-id="BUY_BUTTON_ID_FROM_STRIPE"
-          publishable-key="pk_live_your_key_here">
-        </stripe-buy-button>
-        <p class="small note">Use this if you want to sell simple “tickets” as products. You’ll manage attendee lists yourself.</p>
+        <!-- If you prefer the full embedded widget instead of a button,
+             replace the link above with Ticket Tailor's embed snippet: 
+             <div class="tt-widget">...</div>
+        -->
+        <p class="small note">Ticket Tailor handles checkout and e-tickets.</p>
       </div>
-
+      <!-- End Ticket Tailor -->
     </section>
 
     <section class="panel faq" aria-label="FAQ">
       <h2 style="margin:0 0 8px">FAQ</h2>
       <details>
-        <summary>Is this kid‑friendly?</summary>
-        <p>Yes! Trick‑or‑treating at decorated golf carts is designed for families. The golf tourney is optional.</p>
+        <summary>Is this kid-friendly?</summary>
+        <p>Yes! Trick-or-treating at decorated golf carts is designed for families. The golf tourney is optional.</p>
       </details>
       <details>
         <summary>What should I bring?</summary>
-        <p>Warm layers, comfy shoes, and your best costume. GA tickets include access to trick‑or‑treating and festivities.</p>
+        <p>Warm layers, comfy shoes, and your best costume. GA tickets include access to trick-or-treating and festivities.</p>
       </details>
       <details>
         <summary>Refunds & rain policy</summary>
-        <p>Tickets are non‑refundable within 72 hours of the event. The event proceeds rain or shine unless safety is impacted.</p>
+        <p>Tickets are non-refundable within 72 hours of the event. The event proceeds rain or shine unless safety is impacted.</p>
       </details>
       <details>
-        <summary>Parking & check‑in</summary>
-        <p>Follow on‑site signs to free parking. Show your QR code at check‑in; we’ll scan it at the gate.</p>
+        <summary>Parking & check-in</summary>
+        <p>Follow on-site signs to free parking. Show your QR code at check-in; we’ll scan it at the gate.</p>
       </details>
     </section>
   </main>
