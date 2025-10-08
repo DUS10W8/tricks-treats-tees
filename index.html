@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tricks, Treats & Tees — Halloween Night</title>
-  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — trick-or-treat golf carts, mini putt tournament, music, food, and fun!" />
+  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Oct 11." />
   <meta property="og:title" content="Tricks, Treats & Tees — Halloween Night" />
-  <meta property="og:description" content="Trick-or-treat golf carts, mini putt tournament, games, and spooky fun for all ages!" />
+  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Oct 11!" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./trick or treat.png" />
   <meta name="theme-color" content="#0b0b0f" />
@@ -69,8 +69,14 @@
       text-transform:uppercase;
       border-radius:14px;
       padding:14px 18px;
+      transition:opacity .3s, transform .2s;
     }
     .btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414;}
+    .btn-primary.disabled{
+      opacity:0.5;
+      cursor:not-allowed;
+      filter:grayscale(0.4);
+    }
     .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
     .badge{
       display:inline-block;
@@ -109,6 +115,18 @@
     footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
     .small{font-size:12px}
     .sale-note{color:var(--accent);font-weight:700;font-size:15px;margin-top:8px;text-align:center}
+    .free-note{
+      background:rgba(255,107,0,0.12);
+      border:1px solid rgba(255,107,0,0.25);
+      color:var(--accent);
+      font-weight:700;
+      font-size:14px;
+      padding:10px 14px;
+      border-radius:12px;
+      margin-top:14px;
+      text-align:center;
+      max-width:600px;
+    }
   </style>
 </head>
 <body>
@@ -117,12 +135,13 @@
     <div class="hero wrap panel">
       <span class="badge">Foodies × Columbia Park Golf Tri-Plex</span>
       <h1 class="brand">Tricks, Treats & Tees</h1>
-      <p>Family-friendly Halloween fun with golf cart trick-or-treating, costume contests, games, DJ, food, and a mini putt tournament!</p>
+      <p>Family-friendly Halloween fun with golf cart trick-or-treating, costume contests, games, DJ, food, and a 21+ mini putt tournament!</p>
       <div class="cta">
         <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
         <a href="#schedule" class="btn btn-ghost">View Schedule</a>
       </div>
       <p class="sale-note">🎟️ Tickets available for sale starting October 11</p>
+      <p class="free-note">Tickets are required only for the <strong>21+ Mini Putt Tournament</strong> —<br>the Trunk-or-Treat and kids’ games are free to attend!</p>
       <figure class="poster">
         <img src="./trick or treat.png" alt="Tricks, Treats & Tees event poster">
       </figure>
@@ -149,7 +168,7 @@
       <div class="detail">
         <div>⛳</div>
         <div>
-          <strong>Mini Putt Tournament</strong>
+          <strong>21+ Mini Putt Tournament</strong>
           <span>
             • 5:00 PM – Registration opens<br>
             • 6:00 PM – First tee time
@@ -168,11 +187,13 @@
 
     <section id="tickets" class="panel tickets" aria-label="Ticket purchase">
       <h2>Tickets</h2>
+      <p class="note"><strong>Note:</strong> Tickets are for the <strong>21+ Mini Putt Tournament only</strong>. Trunk-or-Treat and kids’ games are completely free and open to the public!</p>
+
       <div class="widget-box" style="margin-top:12px">
         <h3>Buy Tickets — Ticket Tailor</h3>
         <p class="sale-note">Tickets available starting October 11</p>
         <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
-        <a class="btn btn-primary"
+        <a id="ticketButton" class="btn btn-primary"
            href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">
           Buy Tickets
         </a>
@@ -183,12 +204,12 @@
     <section class="panel faq" aria-label="What to Expect">
       <h2 style="margin:0 0 8px">What to Expect</h2>
       <ul style="color:var(--ink-dim);font-size:15px;line-height:1.6">
-        <li>🎃 Golf Cart Trick-or-Treating</li>
+        <li>🎃 Golf Cart Trick-or-Treating (Free)</li>
         <li>👻 Costume Contest</li>
-        <li>🎯 Kids Games</li>
+        <li>🎯 Kids Games (Free)</li>
         <li>🎵 DJ & Music</li>
         <li>🍔 Food & Drink Specials</li>
-        <li>🍻 21+ Mini Putt Game</li>
+        <li>🍻 21+ Mini Putt Game (Ticket Required)</li>
       </ul>
     </section>
   </main>
@@ -200,6 +221,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Disable Buy Tickets button until October 11
+    const ticketButton = document.getElementById('ticketButton');
+    const today = new Date();
+    const saleDate = new Date('2025-10-11T00:00:00');
+
+    if (today < saleDate) {
+      ticketButton.classList.add('disabled');
+      ticketButton.setAttribute('aria-disabled', 'true');
+      ticketButton.setAttribute('title', 'Tickets go on sale October 11');
+      ticketButton.addEventListener('click', e => e.preventDefault());
+    }
   </script>
 </body>
 </html>
