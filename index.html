@@ -105,10 +105,6 @@
     .tickets h2{margin:0 0 6px;font-family:Rubik;font-size:clamp(22px,3.6vw,34px)}
     .widget-box{background:#0f1017;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:18px}
     .note{color:var(--ink-dim);font-size:14px}
-    .faq{padding:22px}
-    details{background:#0e0f15;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
-    details+details{margin-top:10px}
-    details summary{cursor:pointer;font-weight:700}
     footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
     .small{font-size:12px}
     .sale-note{color:var(--accent);font-weight:700;font-size:15px;margin-top:8px;text-align:center}
@@ -132,7 +128,7 @@
     #sponsor .small{color:#9aa0b7;margin:0;font-size:13px}
     #availability{
       background:rgba(255,107,0,0.15);
-      border:1px solid rgba(255,107,0,0.25);
+      border:1px solid rgba(255,255,255,.25);
       border-radius:10px;
       padding:10px 14px;
       margin-bottom:16px;
@@ -161,13 +157,6 @@
   </header>
 
   <main class="wrap grid two">
-    <section id="schedule" class="panel details">
-      <h2 style="margin-top:0">Event Schedule</h2>
-      <div class="detail"><div>🎃</div><div><strong>Kids Event</strong><span>• 4:00 PM – Sponsors arrive<br>• 5:00 PM – Gates open<br>• 5:30 PM – Trunk-or-Treat<br>• 6:30 PM – Games with DJ</span></div></div>
-      <div class="detail"><div>⛳</div><div><strong>21+ Mini Putt Tournament</strong><span>• 5:00 PM – Registration<br>• 6:00 PM – First tee time</span></div></div>
-      <div class="detail"><div>📍</div><div><strong>Location</strong><span>Foodies @ The River × Columbia Park Golf — Kennewick, WA<br>Free parking • Follow signage</span></div></div>
-    </section>
-
     <section id="tickets" class="panel tickets">
       <h2>Tickets</h2>
       <p class="note"><strong>Note:</strong> Tickets are for the <strong>21+ Mini Putt Tournament only</strong>. Trunk-or-Treat and kids’ games are free and open to the public.</p>
@@ -185,49 +174,11 @@
       <h2>Sponsor a Trick-or-Treat Golf Cart</h2>
       <p id="availability">🚗 We have <strong>6 golf carts available</strong> for sponsors — just bring your decorations! If carts are booked, you’re welcome to bring your own golf cart instead. Power is available via generator for lights or displays.</p>
       <p>Local businesses can host a decorated cart, hand out candy, and (optionally) run a fun mini-game. We provide placement and promotion; you bring the spooky vibes!</p>
-      <strong>What you’ll do</strong>
-      <ul>
-        <li>Bring your <em>decorations</em> (we provide carts unless you’re bringing your own).</li>
-        <li>Provide sealed, store-bought candy for trick-or-treaters.</li>
-        <li>Wear family-friendly costumes for your staff at the cart.</li>
-        <li>Offer a simple game for guests (see ideas below).</li>
-      </ul>
-      <form action="https://formspree.io/f/xyyqjvzo" method="POST">
+
+      <form action="https://formspree.io/f/xgvnnonl" method="POST">
         <input type="hidden" name="_subject" value="Cart Sponsor Signup – Tricks, Treats & Tees" />
         <label>Business Name*<br><input required name="business" type="text" placeholder="Acme Co."></label>
         <label>Primary Contact*<br><input required name="contact" type="text" placeholder="Jane Doe"></label>
         <label>Email*<br><input required name="email" type="email" placeholder="name@example.com"></label>
-        <label>Do you have a cart?<br><select name="cart"><option value="need">We need a provided cart</option><option value="have">We’re bringing our own</option></select></label>
-        <button type="submit">Submit Sponsor Application</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p class="small">Questions? Email <a href="mailto:info@example.com">info@example.com</a> • Follow us on Instagram @foodiesriver</p>
-    <p class="small">© <span id="year"></span> Tricks, Treats & Tees</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const ticketButton = document.getElementById('ticketButton');
-    const heroButton = document.getElementById('heroButton');
-    const today = new Date();
-    const saleDate = new Date('2025-10-13T00:00:00');
-
-    if (today < saleDate) {
-      [ticketButton, heroButton].forEach(btn => {
-        btn.classList.add('disabled');
-        btn.textContent = 'Coming Soon';
-        btn.setAttribute('aria-disabled','true');
-        btn.setAttribute('title','Tickets go on sale Monday, October 13');
-        btn.addEventListener('click', e => e.preventDefault());
-      });
-    }
-  </script>
-</body>
-</html>
-
-</html>
+        <label>Do you have a cart?<br><select name="cart"><option value="need">W
 
