@@ -4,235 +4,251 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tricks, Treats & Tees — Halloween Night</title>
-  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Oct 11." />
+  <meta name="description" content="Family-friendly Halloween event with trick-or-treat golf carts, costume golf tourney, music, and food. Buy tickets or sign up to sponsor a cart here." />
   <meta property="og:title" content="Tricks, Treats & Tees — Halloween Night" />
-  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Oct 11!" />
+  <meta property="og:description" content="Trick-or-treat golf carts + costume tourney. Get your tickets or sponsor a cart!" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./trick or treat.png" />
+  <meta property="og:image" content="trick or treat.png" />
   <meta name="theme-color" content="#0b0b0f" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#0b0b0f;
-      --panel:#12131a;
-      --ink:#e8e8f0;
-      --ink-dim:#b8b8c7;
-      --accent:#ff6b00;
-      --radius:18px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #0b0b0f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      background:radial-gradient(1200px 600px at 80% -10%, #1a1b27 0%, #0b0b0f 50%, #050507 100%);
-      color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+
+    header {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
     }
-    a{color:var(--accent);text-decoration:none}
-    header{
-      position:relative;
-      padding:clamp(20px,4vw,40px);
-      text-align:center;
-      overflow:hidden;
-      border-bottom:1px solid rgba(255,255,255,.06);
+
+    header img {
+      width: 100%;
+      height: auto;
+      border-bottom: 4px solid #ff6b00;
     }
-    .brand{
-      font-family:Rubik,Inter,sans-serif;
-      letter-spacing:.5px;
-      font-weight:900;
-      font-size:clamp(28px,5.5vw,56px);
-      margin:6px 0;
+
+    main {
+      padding: 30px;
+      max-width: 900px;
     }
-    .moon{
-      position:absolute;right:6%;top:6%;width:min(22vw,150px);aspect-ratio:1;border-radius:50%;
-      background:radial-gradient(circle at 40% 40%, #fff8dd 0 40%, #f4d28a 55%, #f0b76d 62%, #1c1b25 66%);
-      box-shadow:0 0 50px 10px rgba(255,233,170,.12);
+
+    h1 {
+      font-family: Rubik;
+      font-size: 2.4rem;
+      color: #ff6b00;
+      margin-bottom: 0;
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:clamp(20px,4vw,40px)}
-    .panel{background:linear-gradient(180deg,#151622,#0f1018);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .grid{display:grid;gap:24px}
-    @media (min-width:900px){.grid.two{grid-template-columns:1.2fr .8fr}}
-    .hero{display:grid;gap:18px;place-items:center;padding:40px 22px 32px}
-    .hero h1{font-family:Rubik,Inter,sans-serif;font-weight:900;line-height:1;margin:0;font-size:clamp(32px,6.6vw,68px)}
-    .hero p{color:var(--ink-dim);margin:0;max-width:70ch}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
-    .btn{
-      border:none;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.3px;
-      text-transform:uppercase;
-      border-radius:14px;
-      padding:14px 18px;
-      transition:opacity .3s, transform .2s;
+
+    h2 {
+      font-family: Rubik;
+      color: #ff6b00;
     }
-    .btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414;}
-    .btn-primary.disabled{
-      opacity:0.5;
-      cursor:not-allowed;
-      filter:grayscale(0.4);
+
+    p {
+      color: #ddd;
+      line-height: 1.6;
     }
-    .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      padding:6px 10px;
-      border-radius:999px;
-      color:var(--ink-dim);
-      font-size:12px;
-      font-weight:600;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+
+    .tickets {
+      margin-top: 40px;
+      padding: 20px;
+      background: #12131a;
+      border-radius: 12px;
     }
-    .poster{
-      width:100%;
-      max-width:800px;
-      margin:18px auto 0;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ff6b00;
+      color: #000;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
     }
-    .poster img{display:block;width:100%;height:auto}
-    .details{display:grid;gap:18px;padding:20px}
-    .detail{display:flex;gap:12px;align-items:flex-start;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px}
-    .detail strong{display:block;font-weight:800;color:var(--ink)}
-    .detail span{color:var(--ink-dim)}
-    .tickets{padding:22px}
-    .tickets h2{margin:0 0 6px;font-family:Rubik;font-size:clamp(22px,3.6vw,34px)}
-    .widget-box{background:#0f1017;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:18px}
-    .note{color:var(--ink-dim);font-size:14px}
-    .faq{padding:22px}
-    details{background:#0e0f15;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
-    details+details{margin-top:10px}
-    details summary{cursor:pointer;font-weight:700}
-    footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
-    .small{font-size:12px}
-    .sale-note{color:var(--accent);font-weight:700;font-size:15px;margin-top:8px;text-align:center}
-    .free-note{
-      background:rgba(255,107,0,0.12);
-      border:1px solid rgba(255,107,0,0.25);
-      color:var(--accent);
-      font-weight:700;
-      font-size:14px;
-      padding:10px 14px;
-      border-radius:12px;
-      margin-top:14px;
-      text-align:center;
-      max-width:600px;
+
+    footer {
+      padding: 20px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Sponsor section */
+    #sponsor {
+      margin: 30px 0;
+      padding: 24px;
+      background: #0f1017;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      text-align: left;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    #sponsor ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #cfcfe6;
+      line-height: 1.6;
+    }
+
+    #sponsor form {
+      display: grid;
+      gap: 12px;
+      background: #12131a;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 20px;
+    }
+
+    #sponsor input,
+    #sponsor select,
+    #sponsor textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #303245;
+      background: #0b0c12;
+      color: #fff;
+    }
+
+    #sponsor button {
+      background: #ff6b00;
+      color: #141414;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    #sponsor .small {
+      color: #9aa0b7;
+      margin: 0;
+      font-size: 13px;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="moon" aria-hidden="true"></div>
-    <div class="hero wrap panel">
-      <span class="badge">Foodies × Columbia Park Golf Tri-Plex</span>
-      <h1 class="brand">Tricks, Treats & Tees</h1>
-      <p>Family-friendly Halloween fun with golf cart trick-or-treating, costume contests, games, DJ, food, and a 21+ mini putt tournament!</p>
-      <div class="cta">
-        <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
-        <a href="#schedule" class="btn btn-ghost">View Schedule</a>
-      </div>
-      <p class="sale-note">🎟️ Tickets available for sale starting October 11</p>
-      <p class="free-note">Tickets are required only for the <strong>21+ Mini Putt Tournament</strong> —<br>the Trunk-or-Treat and kids’ games are free to attend!</p>
-      <figure class="poster">
-        <img src="./trick or treat.png" alt="Tricks, Treats & Tees event poster">
-      </figure>
-    </div>
+    <img src="trick or treat.png" alt="Tricks, Treats & Tees Event Poster" />
   </header>
 
-  <main class="wrap grid two">
-    <section id="schedule" class="panel details" aria-label="Event schedule">
-      <h2 style="margin-top:0">Event Schedule</h2>
+  <main>
+    <h1>Tricks, Treats & Tees</h1>
+    <p><strong>Foodies @ The River</strong> and <strong>Columbia Park Golf</strong> present a Halloween evening full of trick-or-treat golf carts, a costume golf tournament, and fun for all ages!</p>
 
-      <div class="detail">
-        <div>🎃</div>
+    <div class="tickets">
+      <h2>Buy Tickets</h2>
+      <p>Purchase your tickets below. A Ticket Tailor widget will appear here once the event setup is complete.</p>
+      <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
+      <a class="btn" href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">Buy Tickets</a>
+    </div>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor">
+      <h2>Sponsor a Trick-or-Treat Golf Cart</h2>
+      <p>Local businesses can host a decorated cart, hand out candy, and (optionally) run a fun mini-game. We provide placement and promotion; you bring the spooky vibes!</p>
+
+      <div>
         <div>
-          <strong>Kids Event</strong>
-          <span>
-            • 4:00 PM – Sponsors arrive to decorate golf carts and enjoy food & drinks<br>
-            • 5:00 PM – Gates open<br>
-            • 5:30 PM – Trunk-or-Treat begins<br>
-            • 6:30 PM – Games with the DJ
-          </span>
+          <strong>What you’ll do</strong>
+          <ul>
+            <li>Bring a <em>decorated</em> golf cart (lights encouraged) — we can help place you.</li>
+            <li>Provide sealed, store-bought candy for trick-or-treaters.</li>
+            <li>Wear costumes (family-friendly) for your staff at the cart.</li>
+            <li>Offer a simple game for kids/guests (see ideas below).</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="detail">
-        <div>⛳</div>
-        <div>
-          <strong>21+ Mini Putt Tournament</strong>
-          <span>
-            • 5:00 PM – Registration opens<br>
-            • 6:00 PM – First tee time
-          </span>
+        <div style="margin-top:14px">
+          <strong>Game ideas</strong>
+          <ul>
+            <li>Prize wheel (chance spin)</li>
+            <li>1-shot mini putt / ring the pumpkin</li>
+            <li>Beanbag toss into cauldrons</li>
+            <li>Glow-ring toss</li>
+            <li>"Guess the candy count" jar</li>
+            <li>Mini basketball / beer-pong style cup toss (non-alcoholic prizes)</li>
+          </ul>
+          <p class="small">Keep it safe, simple, and quick so the line moves. We can help tailor for all-ages.</p>
         </div>
+
+        <form action="https://formspree.io/f/xyyqjvzo" method="POST">
+          <input type="hidden" name="_subject" value="Cart Sponsor Signup – Tricks, Treats & Tees" />
+
+          <label>Business Name*<br>
+            <input required name="business" type="text" placeholder="Acme Co.">
+          </label>
+
+          <label>Primary Contact*<br>
+            <input required name="contact" type="text" placeholder="Jane Doe">
+          </label>
+
+          <label>Email*<br>
+            <input required name="email" type="email" placeholder="name@example.com">
+          </label>
+
+          <label>Phone<br>
+            <input name="phone" type="tel" placeholder="(555) 555-5555">
+          </label>
+
+          <label>Do you have a cart?<br>
+            <select name="cart">
+              <option value="have">We have our own</option>
+              <option value="need">We need a cart assignment</option>
+            </select>
+          </label>
+
+          <label>Power needs<br>
+            <input name="power" type="text" placeholder="None / 120V outlet / battery pack">
+          </label>
+
+          <label>Game choice<br>
+            <select name="game">
+              <option>Prize wheel</option>
+              <option>Mini putt challenge</option>
+              <option>Beanbag toss</option>
+              <option>Ring toss</option>
+              <option>Guess-the-jar</option>
+              <option>Other (describe below)</option>
+            </select>
+          </label>
+
+          <label>Describe your theme / game (optional)<br>
+            <textarea name="notes" rows="4" placeholder="Theme, decorations, prizes, any special requests…"></textarea>
+          </label>
+
+          <label>Estimated candy quantity<br>
+            <input name="candy" type="text" placeholder="e.g., 500 pieces">
+          </label>
+
+          <label>
+            <input required type="checkbox" name="agree" style="accent-color:#ff6b00">
+            I agree to provide sealed, store-bought candy; keep activities family-friendly; and follow on-site safety instructions.
+          </label>
+
+          <button type="submit">Submit Sponsor Application</button>
+          <p class="small">This form posts to Formspree and sends results to riverfoodies@gmail.com.</p>
+        </form>
       </div>
-
-      <div class="detail">
-        <div>📍</div>
-        <div>
-          <strong>Location</strong>
-          <span>Foodies @ The River × Columbia Park Golf — Kennewick, WA<br>Free parking • Follow event signage</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="tickets" class="panel tickets" aria-label="Ticket purchase">
-      <h2>Tickets</h2>
-      <p class="note"><strong>Note:</strong> Tickets are for the <strong>21+ Mini Putt Tournament only</strong>. Trunk-or-Treat and kids’ games are completely free and open to the public!</p>
-
-      <div class="widget-box" style="margin-top:12px">
-        <h3>Buy Tickets — Ticket Tailor</h3>
-        <p class="sale-note">Tickets available starting October 11</p>
-        <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
-        <a id="ticketButton" class="btn btn-primary"
-           href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">
-          Buy Tickets
-        </a>
-        <p class="small note">Ticket Tailor handles secure checkout and e-tickets.</p>
-      </div>
-    </section>
-
-    <section class="panel faq" aria-label="What to Expect">
-      <h2 style="margin:0 0 8px">What to Expect</h2>
-      <ul style="color:var(--ink-dim);font-size:15px;line-height:1.6">
-        <li>🎃 Golf Cart Trick-or-Treating (Free)</li>
-        <li>👻 Costume Contest</li>
-        <li>🎯 Kids Games (Free)</li>
-        <li>🎵 DJ & Music</li>
-        <li>🍔 Food & Drink Specials</li>
-        <li>🍻 21+ Mini Putt Game (Ticket Required)</li>
-      </ul>
     </section>
   </main>
 
-  <footer>
-    <p class="small">Questions? Email <a href="mailto:info@example.com">info@example.com</a> • Follow us on Instagram @foodiesriver</p>
-    <p class="small">© <span id="year"></span> Tricks, Treats & Tees</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Disable Buy Tickets button until October 11
-    const ticketButton = document.getElementById('ticketButton');
-    const today = new Date();
-    const saleDate = new Date('2025-10-11T00:00:00');
-
-    if (today < saleDate) {
-      ticketButton.classList.add('disabled');
-      ticketButton.setAttribute('aria-disabled', 'true');
-      ticketButton.setAttribute('title', 'Tickets go on sale October 11');
-      ticketButton.addEventListener('click', e => e.preventDefault());
-    }
-  </script>
+  <footer>© <script>document.write(new Date().getFullYear());</script> Foodies @ The River × Columbia Park Golf</footer>
 </body>
 </html>
