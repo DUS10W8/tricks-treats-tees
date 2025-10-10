@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tricks, Treats & Tees — Halloween Night</title>
-  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Oct 11." />
+  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Mon, Oct 13." />
   <meta property="og:title" content="Tricks, Treats & Tees — Halloween Night" />
-  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Oct 11!" />
+  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Mon, Oct 13!" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./trick or treat.png" />
   <meta name="theme-color" content="#0b0b0f" />
@@ -63,13 +63,14 @@
       cursor:pointer;
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      justify-content:center;
       font-weight:800;
       letter-spacing:.3px;
       text-transform:uppercase;
       border-radius:14px;
       padding:14px 18px;
       transition:opacity .3s, transform .2s;
+      min-width:140px;
     }
     .btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414;}
     .btn-primary.disabled{opacity:0.5;cursor:not-allowed;filter:grayscale(0.4);}
@@ -123,7 +124,6 @@
       text-align:center;
       max-width:600px;
     }
-    /* Sponsor Section */
     #sponsor{margin:30px 0;padding:24px;background:#0f1017;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:left}
     #sponsor ul{margin:0;padding-left:20px;color:#cfcfe6;line-height:1.6}
     #sponsor form{display:grid;gap:12px;background:#12131a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-top:20px}
@@ -149,10 +149,10 @@
       <h1 class="brand">Tricks, Treats & Tees</h1>
       <p>Family-friendly Halloween fun with golf cart trick-or-treating, costume contests, games, DJ, food, and a 21+ mini putt tournament!</p>
       <div class="cta">
-        <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+        <a href="#tickets" class="btn btn-primary" id="heroButton">Buy Tickets</a>
         <a href="#schedule" class="btn btn-ghost">View Schedule</a>
       </div>
-      <p class="sale-note">🎟️ Tickets available for sale starting October 11</p>
+      <p class="sale-note">🎟️ Tickets available for sale starting <strong>Monday, October 13</strong></p>
       <p class="free-note">Tickets are required only for the <strong>21+ Mini Putt Tournament</strong> —<br>the Trunk-or-Treat and kids’ games are free to attend!</p>
       <figure class="poster">
         <img src="./trick or treat.png" alt="Tricks, Treats & Tees event poster">
@@ -173,65 +173,32 @@
       <p class="note"><strong>Note:</strong> Tickets are for the <strong>21+ Mini Putt Tournament only</strong>. Trunk-or-Treat and kids’ games are free and open to the public.</p>
       <div class="widget-box" style="margin-top:12px">
         <h3>Buy Tickets — Ticket Tailor</h3>
-        <p class="sale-note">Tickets available starting October 11</p>
+        <p class="sale-note">Tickets available starting <strong>Monday, October 13</strong></p>
         <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
         <a id="ticketButton" class="btn btn-primary" href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">Buy Tickets</a>
         <p class="small note">Ticket Tailor handles secure checkout and e-tickets.</p>
       </div>
     </section>
 
-    <section class="panel faq">
-      <h2 style="margin:0 0 8px">What to Expect</h2>
-      <ul style="color:var(--ink-dim);font-size:15px;line-height:1.6">
-        <li>🎃 Golf Cart Trick-or-Treating (Free)</li>
-        <li>👻 Costume Contest</li>
-        <li>🎯 Kids Games (Free)</li>
-        <li>🎵 DJ & Music</li>
-        <li>🍔 Food & Drink Specials</li>
-        <li>🍻 21+ Mini Putt Game (Ticket Required)</li>
-      </ul>
-    </section>
-
     <!-- Sponsor Section -->
     <section id="sponsor" class="panel">
       <h2>Sponsor a Trick-or-Treat Golf Cart</h2>
-      <p id="availability">🚗 We have <strong>6 golf carts available</strong> for sponsors — or bring your own cart if they’re already booked! Power is available if you need it.</p>
-
+      <p id="availability">🚗 We have <strong>6 golf carts available</strong> for sponsors — just bring your decorations! If carts are booked, you’re welcome to bring your own golf cart instead. Power is available via generator for lights or displays.</p>
       <p>Local businesses can host a decorated cart, hand out candy, and (optionally) run a fun mini-game. We provide placement and promotion; you bring the spooky vibes!</p>
-
       <strong>What you’ll do</strong>
       <ul>
-        <li>Bring a <em>decorated</em> golf cart (lights encouraged) — we can help place you.</li>
+        <li>Bring your <em>decorations</em> (we provide carts unless you’re bringing your own).</li>
         <li>Provide sealed, store-bought candy for trick-or-treaters.</li>
         <li>Wear family-friendly costumes for your staff at the cart.</li>
         <li>Offer a simple game for guests (see ideas below).</li>
       </ul>
-
-      <strong>Game ideas</strong>
-      <ul>
-        <li>Prize wheel (chance spin)</li>
-        <li>1-shot mini putt / ring the pumpkin</li>
-        <li>Beanbag toss into cauldrons</li>
-        <li>Glow-ring toss</li>
-        <li>"Guess the candy count" jar</li>
-        <li>Mini basketball / cup toss</li>
-      </ul>
-      <p class="small">Keep it safe, simple, and quick so the line moves. We can help tailor for all-ages.</p>
-
       <form action="https://formspree.io/f/xyyqjvzo" method="POST">
         <input type="hidden" name="_subject" value="Cart Sponsor Signup – Tricks, Treats & Tees" />
         <label>Business Name*<br><input required name="business" type="text" placeholder="Acme Co."></label>
         <label>Primary Contact*<br><input required name="contact" type="text" placeholder="Jane Doe"></label>
         <label>Email*<br><input required name="email" type="email" placeholder="name@example.com"></label>
-        <label>Phone<br><input name="phone" type="tel" placeholder="(555) 555-5555"></label>
-        <label>Do you have a cart?<br><select name="cart"><option value="have">We have our own</option><option value="need">We need a cart assignment</option></select></label>
-        <label>Power needs<br><input name="power" type="text" placeholder="None / 120V outlet / battery pack"></label>
-        <label>Game choice<br><select name="game"><option>Prize wheel</option><option>Mini putt challenge</option><option>Beanbag toss</option><option>Ring toss</option><option>Guess-the-jar</option><option>Other (describe below)</option></select></label>
-        <label>Describe your theme / game<br><textarea name="notes" rows="4" placeholder="Theme, decorations, prizes, any special requests…"></textarea></label>
-        <label>Estimated candy quantity<br><input name="candy" type="text" placeholder="e.g., 500 pieces"></label>
-        <label><input required type="checkbox" name="agree" style="accent-color:#ff6b00"> I agree to provide sealed candy, keep activities family-friendly, and follow on-site safety instructions.</label>
+        <label>Do you have a cart?<br><select name="cart"><option value="need">We need a provided cart</option><option value="have">We’re bringing our own</option></select></label>
         <button type="submit">Submit Sponsor Application</button>
-        <p class="small">This form posts to Formspree and sends results to riverfoodies@gmail.com.</p>
       </form>
     </section>
   </main>
@@ -243,16 +210,24 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const ticketButton = document.getElementById('ticketButton');
+    const heroButton = document.getElementById('heroButton');
     const today = new Date();
-    const saleDate = new Date('2025-10-11T00:00:00');
+    const saleDate = new Date('2025-10-13T00:00:00');
+
     if (today < saleDate) {
-      ticketButton.classList.add('disabled');
-      ticketButton.setAttribute('aria-disabled','true');
-      ticketButton.setAttribute('title','Tickets go on sale October 11');
-      ticketButton.addEventListener('click',e=>e.preventDefault());
+      [ticketButton, heroButton].forEach(btn => {
+        btn.classList.add('disabled');
+        btn.textContent = 'Coming Soon';
+        btn.setAttribute('aria-disabled','true');
+        btn.setAttribute('title','Tickets go on sale Monday, October 13');
+        btn.addEventListener('click', e => e.preventDefault());
+      });
     }
   </script>
 </body>
+</html>
+
 </html>
 
