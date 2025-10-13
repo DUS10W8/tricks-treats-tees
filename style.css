@@ -47,30 +47,31 @@ footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
 #sponsor button{background:#ff6b00;color:#141414;border:none;border-radius:10px;padding:12px 16px;font-weight:800;text-transform:uppercase;cursor:pointer}
 #availability{background:rgba(255,107,0,0.15);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ffb86b;font-weight:700}
 
-/* Ticket Tailor Widget container styling */
-.tt-container {
-  background:#1b1b24;
-  border-radius:12px;
-  padding:16px;
-  color:#f5f5f5;
-  filter:brightness(1.15);
+/* Brightened Ticket Tailor widget area */
+.bright-widget {
+  background: linear-gradient(180deg, #fff8ee 0%, #fff4e4 100%);
+  border: 1px solid #ffb86b;
+  border-radius: 16px;
+  color: #222;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.25);
+  padding-bottom: 16px;
 }
-.tt-container a,
-.tt-container a:visited {
-  color:#ff7a1a !important;
+.bright-widget h3,
+.bright-widget .sale-note { color: #ff6b00; }
+
+.tt-bright-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 10px;
+  color: #000;
 }
-.tt-container small {
-  color:#bbb !important;
-}
-.tt-container .tt-widget {
-  background-color:#1b1b24 !important;
-  border:none !important;
-}
-.tt-container .tt-widget p,
-.tt-container .tt-widget h3,
-.tt-container .tt-widget strong {
-  color:#f0f0f0 !important;
-}
+.tt-bright-container a { color: #ff6b00 !important; }
+.tt-bright-container small { color: #333 !important; }
+.tt-bright-container .tt-widget { background-color: #ffffff !important; border: none !important; }
+.tt-bright-container .tt-widget p,
+.tt-bright-container .tt-widget h3,
+.tt-bright-container .tt-widget strong { color: #000 !important; }
 
 /* Pre-sale placeholder */
 .presale {
@@ -83,3 +84,4 @@ footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
   border-radius:14px;
   background:#0f1017;
 }
+
