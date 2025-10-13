@@ -58,7 +58,7 @@
 
         <!-- Live widget container -->
         <div id="ttWidgetWrap" style="display:none">
-          <div class="tt-bright-container">
+          <div class="tt-bright-container fade-in">
             <!-- Ticket Tailor Widget -->
             <div class="tt-widget">
               <div class="tt-widget-fallback">
@@ -76,7 +76,6 @@
                 data-inline-inherit-ref-from-url-param=""
                 data-inline-ref="website_widget"></script>
             </div>
-            <!-- End of Ticket Tailor Widget -->
           </div>
         </div>
       </div>
@@ -142,13 +141,14 @@
       heroButton.removeAttribute('title');
       presale.style.display = 'none';
       widgetWrap.style.display = '';
+      widgetWrap.classList.add('fade-in');
     }
 
     if (new Date() < saleDate) {
       showPreSale();
       const interval = setInterval(() => {
         if (new Date() >= saleDate) { showWidget(); clearInterval(interval); }
-      }, 60 * 1000);
+      }, 60000);
     } else showWidget();
   </script>
 </body>
