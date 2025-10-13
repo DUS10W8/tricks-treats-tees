@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tricks, Treats & Tees — Halloween Night</title>
-  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Mon, Oct 13." />
+  <meta name="description" content="Join Foodies & Columbia Park Golf Tri-Plex for a family-friendly Halloween event — free trunk-or-treat and games, plus a 21+ mini putt tournament with tickets available starting Mon, Oct 13 at 12 PM." />
   <meta property="og:title" content="Tricks, Treats & Tees — Halloween Night" />
-  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Mon, Oct 13!" />
+  <meta property="og:description" content="Free trunk-or-treat and kids games • 21+ Mini Putt Tournament requires ticket • Tickets on sale Mon, Oct 13 at 12 PM!" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./trick or treat.png" />
   <meta name="theme-color" content="#0b0b0f" />
@@ -152,7 +152,7 @@
         <a href="#tickets" class="btn btn-primary" id="heroButton">Buy Tickets</a>
         <a href="#schedule" class="btn btn-ghost">View Schedule</a>
       </div>
-      <p class="sale-note">🎟️ Tickets available for sale starting <strong>Monday, October 13</strong></p>
+      <p class="sale-note">🎟️ Tickets available for sale starting <strong>Monday, October 13 at 12:00 PM</strong></p>
       <p class="free-note">Tickets are required only for the <strong>21+ Mini Putt Tournament</strong> —<br>the Trunk-or-Treat and kids’ games are free to attend!</p>
       <figure class="poster">
         <img src="./trick or treat.png" alt="Tricks, Treats & Tees event poster">
@@ -173,7 +173,7 @@
       <p class="note"><strong>Note:</strong> Tickets are for the <strong>21+ Mini Putt Tournament only</strong>. Trunk-or-Treat and kids’ games are free and open to the public.</p>
       <div class="widget-box" style="margin-top:12px">
         <h3>Buy Tickets — Ticket Tailor</h3>
-        <p class="sale-note">Tickets available starting <strong>Monday, October 13</strong></p>
+        <p class="sale-note">Tickets available starting <strong>Monday, October 13 at 12:00 PM</strong></p>
         <script async src="https://cdn.tickettailor.com/js/widgets/box-office.js"></script>
         <a id="ticketButton" class="btn btn-primary" href="https://YOUR-SUBDOMAIN.tickettailor.com/events/YOUR-EVENT">Buy Tickets</a>
         <p class="small note">Ticket Tailor handles secure checkout and e-tickets.</p>
@@ -222,19 +222,48 @@
 
     const ticketButton = document.getElementById('ticketButton');
     const heroButton = document.getElementById('heroButton');
-    const today = new Date();
-    const saleDate = new Date('2025-10-13T00:00:00');
 
-    if (today < saleDate) {
+    // Unlock at 2025-10-13 12:00 PM Pacific Time (PDT = -07:00).
+    // Using explicit timezone offset to avoid browser parsing differences.
+    const saleDate = new Date('2025-10-13T12:00:00-07:00');
+    const now = new Date();
+
+    function disableBuyButtons() {
       [ticketButton, heroButton].forEach(btn => {
+        if (!btn) return;
         btn.classList.add('disabled');
         btn.textContent = 'Coming Soon';
         btn.setAttribute('aria-disabled','true');
-        btn.setAttribute('title','Tickets go on sale Monday, October 13');
+        btn.setAttribute('title','Tickets go on sale Monday, October 13 at 12:00 PM');
         btn.addEventListener('click', e => e.preventDefault());
       });
+    }
+
+    function enableBuyButtons() {
+      [ticketButton, heroButton].forEach(btn => {
+        if (!btn) return;
+        btn.classList.remove('disabled');
+        btn.textContent = 'Buy Tickets';
+        btn.removeAttribute('aria-disabled');
+        btn.removeAttribute('title');
+        btn.replaceWith(btn); // remove old click handler side-effects
+      });
+    }
+
+    if (now < saleDate) {
+      disableBuyButtons();
+      // Optional: check every minute in case the page is left open until sale time
+      const interval = setInterval(() => {
+        if (new Date() >= saleDate) {
+          enableBuyButtons();
+          clearInterval(interval);
+        }
+      }, 60 * 1000);
+    } else {
+      enableBuyButtons();
     }
   </script>
 </body>
 </html>
+
 
