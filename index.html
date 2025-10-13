@@ -12,61 +12,9 @@
   <meta name="theme-color" content="#0b0b0f" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b0b0f; --panel:#12131a; --ink:#e8e8f0; --ink-dim:#b8b8c7;
-      --accent:#ff6b00; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      background:radial-gradient(1200px 600px at 80% -10%, #1a1b27 0%, #0b0b0f 50%, #050507 100%);
-      color:var(--ink); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
-    }
-    a{color:var(--accent);text-decoration:none}
-    header{position:relative;padding:clamp(20px,4vw,40px);text-align:center;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
-    .brand{font-family:Rubik,Inter,sans-serif;letter-spacing:.5px;font-weight:900;font-size:clamp(28px,5.5vw,56px);margin:6px 0}
-    .moon{position:absolute;right:6%;top:6%;width:min(22vw,150px);aspect-ratio:1;border-radius:50%;
-      background:radial-gradient(circle at 40% 40%, #fff8dd 0 40%, #f4d28a 55%, #f0b76d 62%, #1c1b25 66%);box-shadow:0 0 50px 10px rgba(255,233,170,.12)}
-    .wrap{max-width:1100px;margin:0 auto;padding:clamp(20px,4vw,40px)}
-    .panel{background:linear-gradient(180deg,#151622,#0f1018);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .grid{display:grid;gap:24px}
-    @media (min-width:900px){.grid.two{grid-template-columns:1.2fr .8fr}}
-    .hero{display:grid;gap:18px;place-items:center;padding:40px 22px 32px}
-    .hero h1{font-family:Rubik,Inter,sans-serif;font-weight:900;line-height:1;margin:0;font-size:clamp(32px,6.6vw,68px)}
-    .hero p{color:var(--ink-dim);margin:0;max-width:70ch}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
-    .btn{border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-weight:800;letter-spacing:.3px;text-transform:uppercase;border-radius:14px;padding:14px 18px;transition:opacity .3s, transform .2s;min-width:140px}
-    .btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414}
-    .btn-primary.disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4)}
-    .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
-    .badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;color:var(--ink-dim);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-    .poster{width:100%;max-width:800px;margin:18px auto 0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
-    .poster img{display:block;width:100%;height:auto}
-    .details{display:grid;gap:18px;padding:20px}
-    .detail{display:flex;gap:12px;align-items:flex-start;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px}
-    .detail strong{display:block;font-weight:800;color:var(--ink)}
-    .detail span{color:var(--ink-dim)}
-    .tickets{padding:22px}
-    .tickets h2{margin:0 0 6px;font-family:Rubik;font-size:clamp(22px,3.6vw,34px)}
-    .widget-box{background:#0f1017;border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:18px}
-    .note{color:var(--ink-dim);font-size:14px}
-    footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
-    .small{font-size:12px}
-    .sale-note{color:var(--accent);font-weight:700;font-size:15px;margin-top:8px;text-align:center}
-    .free-note{background:rgba(255,107,0,0.12);border:1px solid rgba(255,107,0,0.25);color:var(--accent);font-weight:700;font-size:14px;padding:10px 14px;border-radius:12px;margin-top:14px;text-align:center;max-width:600px}
-    #sponsor{margin:30px 0;padding:24px;background:#0f1017;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:left}
-    #sponsor ul{margin:0;padding-left:20px;color:#cfcfe6;line-height:1.6}
-    #sponsor form{display:grid;gap:12px;background:#12131a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-top:20px}
-    #sponsor input,#sponsor select,#sponsor textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #303245;background:#0b0c12;color:#fff}
-    #sponsor button{background:#ff6b00;color:#141414;border:none;border-radius:10px;padding:12px 16px;font-weight:800;text-transform:uppercase;cursor:pointer}
-    #sponsor .small{color:#9aa0b7;margin:0;font-size:13px}
-    #availability{background:rgba(255,107,0,0.15);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ffb86b;font-weight:700}
-    /* Pre-sale placeholder */
-    .presale{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border:1px dashed rgba(255,255,255,.18);border-radius:14px;background:#0f1017}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <div class="moon" aria-hidden="true"></div>
@@ -102,37 +50,37 @@
         <h3>Buy Tickets — Ticket Tailor</h3>
         <p class="sale-note">Tickets available starting <strong>Monday, October 13 at 12:00 PM</strong></p>
 
-        <!-- Pre-sale placeholder (shown before sale time) -->
+        <!-- Pre-sale placeholder -->
         <div id="ttPreSale" class="presale" aria-live="polite" role="status" style="display:none">
           <button class="btn btn-primary disabled" aria-disabled="true" title="Tickets go on sale Monday, October 13 at 12:00 PM">Coming Soon</button>
           <span class="small" style="color:var(--ink-dim)">Check back at noon for live ticketing.</span>
         </div>
 
-        <!-- Live widget container (revealed at/after sale time) -->
+        <!-- Live widget container -->
         <div id="ttWidgetWrap" style="display:none">
-          <!-- Ticket Tailor Widget. Paste this into your website where you want the widget to appear. Do not change the code or the widget may not work properly. -->
-          <div class="tt-widget">
-            <div class="tt-widget-fallback">
-              <p>
-                <a href="https://www.tickettailor.com/all-tickets/foodies/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Click here to buy tickets</a><br />
-                <small><a href="https://www.tickettailor.com?rf=wdg_272102" class="tt-widget-powered">Sell tickets online with Ticket Tailor</a></small>
-              </p>
+          <div class="tt-container">
+            <!-- Ticket Tailor Widget -->
+            <div class="tt-widget">
+              <div class="tt-widget-fallback">
+                <p>
+                  <a href="https://www.tickettailor.com/all-tickets/foodies/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Click here to buy tickets</a><br />
+                  <small><a href="https://www.tickettailor.com?rf=wdg_272102" class="tt-widget-powered">Sell tickets online with Ticket Tailor</a></small>
+                </p>
+              </div>
+              <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+                data-url="https://www.tickettailor.com/all-tickets/foodies/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+                data-type="inline"
+                data-inline-minimal="true"
+                data-inline-show-logo="false"
+                data-inline-bg-fill="false"
+                data-inline-inherit-ref-from-url-param=""
+                data-inline-ref="website_widget"></script>
             </div>
-            <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
-              data-url="https://www.tickettailor.com/all-tickets/foodies/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
-              data-type="inline"
-              data-inline-minimal="true"
-              data-inline-show-logo="false"
-              data-inline-bg-fill="false"
-              data-inline-inherit-ref-from-url-param=""
-              data-inline-ref="website_widget"></script>
           </div>
-          <!-- End of Ticket Tailor Widget -->
         </div>
       </div>
     </section>
 
-    <!-- Sponsor Section -->
     <section id="sponsor" class="panel">
       <h2>Sponsor a Trick-or-Treat Golf Cart</h2>
       <p id="availability">🚗 We have <strong>6 golf carts available</strong> for sponsors — just bring your decorations! If carts are booked, you’re welcome to bring your own golf cart instead. Power is available via generator for lights or displays.</p>
@@ -171,51 +119,40 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const heroButton = document.getElementById('heroButton');
     const presale = document.getElementById('ttPreSale');
     const widgetWrap = document.getElementById('ttWidgetWrap');
-
-    // Unlock at 2025-10-13 12:00 PM Pacific Time (PDT = -07:00)
     const saleDate = new Date('2025-10-13T12:00:00-07:00');
 
     function showPreSale() {
-      if (heroButton) {
-        heroButton.classList.add('disabled');
-        heroButton.textContent = 'Coming Soon';
-        heroButton.setAttribute('aria-disabled','true');
-        heroButton.setAttribute('title','Tickets go on sale Monday, October 13 at 12:00 PM');
-        heroButton.addEventListener('click', e => e.preventDefault(), { once: true });
-      }
-      if (presale) presale.style.display = '';
-      if (widgetWrap) widgetWrap.style.display = 'none';
+      heroButton.classList.add('disabled');
+      heroButton.textContent = 'Coming Soon';
+      heroButton.setAttribute('aria-disabled','true');
+      heroButton.setAttribute('title','Tickets go on sale Monday, October 13 at 12:00 PM');
+      heroButton.addEventListener('click', e => e.preventDefault(), { once: true });
+      presale.style.display = '';
+      widgetWrap.style.display = 'none';
     }
 
     function showWidget() {
-      if (heroButton) {
-        heroButton.classList.remove('disabled');
-        heroButton.textContent = 'Buy Tickets';
-        heroButton.removeAttribute('aria-disabled');
-        heroButton.removeAttribute('title');
-      }
-      if (presale) presale.style.display = 'none';
-      if (widgetWrap) widgetWrap.style.display = '';
+      heroButton.classList.remove('disabled');
+      heroButton.textContent = 'Buy Tickets';
+      heroButton.removeAttribute('aria-disabled');
+      heroButton.removeAttribute('title');
+      presale.style.display = 'none';
+      widgetWrap.style.display = '';
     }
 
     if (new Date() < saleDate) {
       showPreSale();
       const interval = setInterval(() => {
-        if (new Date() >= saleDate) {
-          showWidget();
-          clearInterval(interval);
-        }
+        if (new Date() >= saleDate) { showWidget(); clearInterval(interval); }
       }, 60 * 1000);
-    } else {
-      showWidget();
-    }
+    } else showWidget();
   </script>
 </body>
 </html>
+
 
 
 
