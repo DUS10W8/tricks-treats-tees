@@ -1,0 +1,85 @@
+:root {
+  --bg:#0b0b0f; --panel:#12131a; --ink:#e8e8f0; --ink-dim:#b8b8c7;
+  --accent:#ff6b00; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body {
+  margin:0;
+  background:radial-gradient(1200px 600px at 80% -10%, #1a1b27 0%, #0b0b0f 50%, #050507 100%);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+a{color:var(--accent);text-decoration:none}
+header{position:relative;padding:clamp(20px,4vw,40px);text-align:center;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{font-family:Rubik,Inter,sans-serif;letter-spacing:.5px;font-weight:900;font-size:clamp(28px,5.5vw,56px);margin:6px 0}
+.moon{position:absolute;right:6%;top:6%;width:min(22vw,150px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, #fff8dd 0 40%, #f4d28a 55%, #f0b76d 62%, #1c1b25 66%);box-shadow:0 0 50px 10px rgba(255,233,170,.12)}
+.wrap{max-width:1100px;margin:0 auto;padding:clamp(20px,4vw,40px)}
+.panel{background:linear-gradient(180deg,#151622,#0f1018);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+.grid{display:grid;gap:24px}
+@media (min-width:900px){.grid.two{grid-template-columns:1.2fr .8fr}}
+.hero{display:grid;gap:18px;place-items:center;padding:40px 22px 32px}
+.hero h1{font-family:Rubik,Inter,sans-serif;font-weight:900;line-height:1;margin:0;font-size:clamp(32px,6.6vw,68px)}
+.hero p{color:var(--ink-dim);margin:0;max-width:70ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
+.btn{border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-weight:800;letter-spacing:.3px;text-transform:uppercase;border-radius:14px;padding:14px 18px;transition:opacity .3s, transform .2s;min-width:140px}
+.btn-primary{background:linear-gradient(180deg,#ff7a1a,#ff6b00);color:#141414}
+.btn-primary.disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.16)}
+.badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;color:var(--ink-dim);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.poster{width:100%;max-width:800px;margin:18px auto 0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+.poster img{display:block;width:100%;height:auto}
+.details{display:grid;gap:18px;padding:20px}
+.detail{display:flex;gap:12px;align-items:flex-start;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px}
+.detail strong{display:block;font-weight:800;color:var(--ink)}
+.detail span{color:var(--ink-dim)}
+.tickets{padding:22px}
+.tickets h2{margin:0 0 6px;font-family:Rubik;font-size:clamp(22px,3.6vw,34px)}
+.note{color:var(--ink-dim);font-size:14px}
+footer{padding:40px 22px;color:var(--ink-dim);text-align:center}
+.small{font-size:12px}
+.sale-note{color:var(--accent);font-weight:700;font-size:15px;margin-top:8px;text-align:center}
+.free-note{background:rgba(255,107,0,0.12);border:1px solid rgba(255,107,0,0.25);color:var(--accent);font-weight:700;font-size:14px;padding:10px 14px;border-radius:12px;margin-top:14px;text-align:center;max-width:600px}
+#sponsor{margin:30px 0;padding:24px;background:#0f1017;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:left}
+#sponsor ul{margin:0;padding-left:20px;color:#cfcfe6;line-height:1.6}
+#sponsor form{display:grid;gap:12px;background:#12131a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;margin-top:20px}
+#sponsor input,#sponsor select,#sponsor textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #303245;background:#0b0c12;color:#fff}
+#sponsor button{background:#ff6b00;color:#141414;border:none;border-radius:10px;padding:12px 16px;font-weight:800;text-transform:uppercase;cursor:pointer}
+#availability{background:rgba(255,107,0,0.15);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ffb86b;font-weight:700}
+
+/* Ticket Tailor Widget container styling */
+.tt-container {
+  background:#1b1b24;
+  border-radius:12px;
+  padding:16px;
+  color:#f5f5f5;
+  filter:brightness(1.15);
+}
+.tt-container a,
+.tt-container a:visited {
+  color:#ff7a1a !important;
+}
+.tt-container small {
+  color:#bbb !important;
+}
+.tt-container .tt-widget {
+  background-color:#1b1b24 !important;
+  border:none !important;
+}
+.tt-container .tt-widget p,
+.tt-container .tt-widget h3,
+.tt-container .tt-widget strong {
+  color:#f0f0f0 !important;
+}
+
+/* Pre-sale placeholder */
+.presale {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:18px;
+  border:1px dashed rgba(255,255,255,.18);
+  border-radius:14px;
+  background:#0f1017;
+}
